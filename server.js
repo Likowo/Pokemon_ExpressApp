@@ -5,11 +5,12 @@ const pokemon = require("./models/pokemon.js");
 
  //--Connect express instance to the variable "app" // i.e Create our express app
 const app = express();
-const pokemon = pokemon()
 const PORT = 3000  // Sets the port, app should listen to
 
 
 //Middleware (app.set)
+app.set("view engine", "jsx")
+app.engine("jsx",require("express-react-views").createEngine())
 
 
 //All Routes (app.get)
@@ -17,10 +18,16 @@ app.get('/', (req, res) => {
     res.send(' Welcome to the Pokemon Express App!');
 })
 
-
+// pokemon route (/pokemon)
 app.get('/pokemon', (req, res) => {
-    res.send(pokemon);
+    res.render('Index');
 })
+
+// Show route with id param 
+app.get('/pokemon/:id', (req, res) => {
+    res.render('Show', {index:req.params.id}); //passing id as props
+})
+
 
 
 
