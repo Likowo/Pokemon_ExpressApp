@@ -10,7 +10,7 @@ const PORT = 3000  // Sets the port, app should listen to
 
 //All Routes (app.get)
 app.get('/', (req, res) => {
-    res.send('Hello World. Welcome to Pokemon Express App');
+    res.send(' Welcome to the Pokemon Express App!');
 })
 
 app.get('/home', function(req, res) {
