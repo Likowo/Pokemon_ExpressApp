@@ -15,10 +15,15 @@ function Index(props) {
     //     };
 
     return (
+
         <div>
-            <h1><b>See All The Pokemons!</b></h1>
+            <nav>
+    <a href="/pokemon/new">Create a New Pokemon</a>
+    </nav>
+            
+            <h1><b>All The Pokemons!</b></h1>
       
-          {pokemon.map((p, i) => {
+          {pokemon.map((poke, i) => {
             return (
               <div key={i}>
                 <a href={`/pokemon/${i}`}>
